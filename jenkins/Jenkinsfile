@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+    stages {
+        stage('Rule Validator') {
+            steps {
+                echo 'Rule Validator'
+            }
+        }
+        stage('Checkout') {
+            steps {
+                echo 'Checkout'
+            }
+        }
+        stage('Backend tests and Sonar') {
+            steps {
+                echo 'ackend tests and Sonar'
+            }
+        }
+        stage('Build and publish artifacts') {
+            steps {
+                echo 'Build and publish artifacts'
+            }
+        }
+        stage('Build and publish docker image') {
+            steps {
+                echo 'Build and publish docker image'
+            }
+        }
+        stage('Deploy Helm Chart To OCP-AWS-DEV') {
+            steps {
+                echo 'Deploy Helm Chart To OCP-AWS-DEV'
+            }
+        }
+        stage('Integration Testing') {
+            steps {
+                echo 'Integration Testing'
+            }
+        }
+    }
+}
