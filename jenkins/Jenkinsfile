@@ -13,12 +13,14 @@ pipeline {
         }
         stage('Backend tests and Sonar') {
             steps {
-                echo 'ackend tests and Sonar'
+                echo 'backend tests and Sonar'
+				 sh 'mvn test' 
             }
         }
         stage('Build and publish artifacts') {
             steps {
                 echo 'Build and publish artifacts'
+				sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Build and publish docker image') {
